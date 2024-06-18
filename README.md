@@ -26,7 +26,7 @@ Actually this is not a meaningful project, it's just that I'm bored then I want 
 3. Go to the project directory and install the dependencies
    ```bash
     cd wabot-gemini
-   npm install
+    npm install
    ```
 4. Copy `.env.example` to `.env` and paste your API Key to `GEMINI_API_KEY`
    ```bash
