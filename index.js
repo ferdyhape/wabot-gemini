@@ -21,7 +21,7 @@ const client = new Client({
 //Initializing GenAI model
 const model = genAI.getGenerativeModel({ model: "gemini-pro" });
 
-//Function to generate reponse from AI model and reply to user
+//Function to generate response from AI model and reply to user
 async function generate(prompt, message) {
   const result = await model.generateContent(prompt);
   const response = await result.response;
@@ -30,7 +30,7 @@ async function generate(prompt, message) {
   await message.reply(text); //Reply to user
 }
 
-//All event listener to know client status
+//All event listeners to know client status
 client.on("qr", (qr) => {
   qrcode.generate(qr, { small: true });
 });
@@ -52,7 +52,13 @@ client.on("auth_failure", () => {
 });
 
 client.on("message", async (message) => {
-  if (message.body.includes(".bot")) {
+  // ignore if group message
+  const isGroup = message.from.includes("@g.us");
+  if (isGroup) {
+    console.log("Group message received!");
+    return;
+  } else if (message.body.includes(".bot")) {
+    console.log("message to bot received!");
     var query;
     //Extracting text from message body using regular expression method
     const regxmatch = message.body.match(/.bot(.+)/);
