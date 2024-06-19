@@ -2,7 +2,9 @@
 
 ## :open_book: Description
 
-Actually this is not a meaningful project, it's just that I'm bored then I want to make a bot on whatsapp.
+Integrate WhatsApp Bot with Gemini API. This project is a simple WhatsApp bot that can interact with the Gemini API. This project is built using Node.js and whatsapp-web.js library.
+
+:smile: Actually this is not a meaningful project, it's just that I'm bored then I want to make a bot on whatsapp. So, I made this project.
 
 <!-- Main library used is [whatsapp-web.js]( -->
 
